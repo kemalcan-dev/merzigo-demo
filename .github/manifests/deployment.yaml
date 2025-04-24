@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: merzigo-springapp-deploy
+  name: demo-app-merzigo
   labels:
-    app.kubernetes.io/name: merzigo-springapp-deploy
+    app.kubernetes.io/name: demo-app-merzigo
     kubernetes.azure.com/generator: devhub
   namespace: java-demoapp-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: merzigo-springapp-deploy
+      app.kubernetes.io/name: demo-app-merzigo
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: merzigo-springapp-deploy
+        app.kubernetes.io/name: demo-app-merzigo
     spec:
       containers:
-        - name: merzigo-springapp-deploy
+        - name: demo-app-merzigo
           image: testcontainerregistrymerzigo.azurecr.io/merzigo-demo-app:latest
           imagePullPolicy: Always
           ports:
@@ -31,7 +31,7 @@ spec:
               memory: "1Gi"
           envFrom:
             - configMapRef:
-                name: merzigo-springapp-deploy-config
+                name: demo-app-merzigo-config
             - secretRef:
                 name: secret-ref
                 optional: true
@@ -83,11 +83,11 @@ spec:
               topologyKey: kubernetes.io/hostname
               labelSelector:
                 matchLabels:
-                  app.kubernetes.io/name: merzigo-springapp-deploy
+                  app.kubernetes.io/name: demo-app-merzigo
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
-              app.kubernetes.io/name: merzigo-springapp-deploy
+              app.kubernetes.io/name: demo-app-merzigo
