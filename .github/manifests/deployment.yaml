@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: merzigo-springapp-deploy
-          image: testcontainerregistrymerzigo.azurecr.io/merzigo-spring-app:latest
+          image: testcontainerregistrymerzigo.azurecr.io/merzigo-demo-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
