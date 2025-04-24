@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: merzigo-springapp-deploy
+  namespace: java-demoapp-namespace
+  labels:
+    app.kubernetes.io/name: merzigo-springapp-deploy
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: merzigo-springapp-deploy
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
