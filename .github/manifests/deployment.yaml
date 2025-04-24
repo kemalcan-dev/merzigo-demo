@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: react-demo-app
-          image: testcontainerregistrymerzigo.azurecr.io/merzigo-spring-app:latest
+          image: testcontainerregistrymerzigo.azurecr.io/react-demo-app2:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
