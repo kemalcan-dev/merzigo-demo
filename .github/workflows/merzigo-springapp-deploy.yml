@@ -1,4 +1,4 @@
-#test now
+#test deploy
 name: Deploy to AKS
 
 on:
