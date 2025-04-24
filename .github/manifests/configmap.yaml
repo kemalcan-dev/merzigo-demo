@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: merzigo-springapp-deploy-config
+  namespace: java-demoapp-namespace
+  labels:
+    app.kubernetes.io/name: merzigo-springapp-deploy
+    kubernetes.azure.com/generator: devhub
+data:
