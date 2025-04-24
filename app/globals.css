@@ -14,7 +14,7 @@
   --selection: rgba(216, 70, 239, 0.3);
 }
 
-/* test deploy*/
+/* test deploy */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000;
