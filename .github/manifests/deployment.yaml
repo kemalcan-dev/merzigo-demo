@@ -16,6 +16,8 @@ spec:
       labels:
         app.kubernetes.io/name: deploy-merzigo
     spec:
+      nodeSelector:
+        kubernetes.io/os: windows
       containers:
         - name: deploy-merzigo
           image: merzigodemo.azurecr.io/merzigo-demo-app:latest
